@@ -192,7 +192,7 @@ def check_sources_in_bazel_build(picotool_dir) -> int:
     missing_files = check_bazel_build_for_files(
         bazel_extensions_to_check=CPP_HEADER_EXTENSIONS + CPP_SOURCE_EXTENSIONS,
         files=source_files,
-        bazel_dirs=[Path(SDK_ROOT)],
+        bazel_dirs=[Path(SDK_ROOT, "src"), Path(SDK_ROOT, "test")],
         picotool_dir=picotool_dir,
     )
 
